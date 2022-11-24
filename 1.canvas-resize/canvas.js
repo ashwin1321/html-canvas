@@ -9,25 +9,25 @@ var c = canvas.getContext('2d');
 
 // DRAWING RECTANGLE
 c.fillStyle = "blue";
-// c.fillRect(x,y,width,height)       // where and what dimensions
-c.fillRect(100, 100, 100, 100);
-c.fillStyle = "purple"     // yesko talako sab yei color ko hunxa
-c.fillRect(500, 100, 100, 100);
-c.fillStyle = ('tomato')
-c.fillRect(500, 300, 100, 100);
-console.log(canvas)
+// // c.fillRect(x,y,width,height)       // where and what dimensions
+// c.fillRect(100, 100, 100, 100);
+// c.fillStyle = "purple"     // yesko talako sab yei color ko hunxa
+// c.fillRect(500, 100, 100, 100);
+// c.fillStyle = ('tomato')
+// c.fillRect(500, 300, 100, 100);
+// console.log(canvas)
 
 
-// DRAWING LINE
-c.beginPath();
-// c.moveTo(x,y)
-c.moveTo(50, 300);  // starting point to the line
-c.lineTo(300, 100)
-c.lineTo(400, 300)
-// can create as many lineTo
+// // DRAWING LINE
+// c.beginPath();
+// // c.moveTo(x,y)
+// c.moveTo(50, 300);  // starting point to the line
+// c.lineTo(300, 100)
+// c.lineTo(400, 300)
+// // can create as many lineTo
 
-c.strokeStyle = "green";  // giving color to line
-c.stroke()          // call this function to draw the line
+// c.strokeStyle = "green";  // giving color to line
+// c.stroke()          // call this function to draw the line
 
 
 
@@ -38,13 +38,33 @@ c.stroke()          // call this function to draw the line
 // c.strokeStyle = "lime"
 // c.stroke()
 
-for (i = 0; i < 100; i++) {
+// for (i = 0; i < 100; i++) {
 
-    x = Math.random() * window.innerWidth;
-    y = Math.random() * window.innerHeight;
+//     x = Math.random() * window.innerWidth;
+//     y = Math.random() * window.innerHeight;
 
-    c.beginPath()           // yo nabhaye agadi ko sangai jodinxa
-    c.arc(x, y, 40, 0, Math.PI * 2, false);
-    c.strokeStyle = "blue";
-    c.stroke();
+//     c.beginPath()           // yo nabhaye agadi ko sangai jodinxa
+//     c.arc(x, y, 40, 0, Math.PI * 2, false);
+//     c.strokeStyle = "blue";
+//     c.stroke();
+// }
+
+
+
+// ANIMATING THE CANVAS
+
+x = 300
+y = 300
+
+function animate() {
+    requestAnimationFrame(animate);     // takes function as a argument
+
+    c.beginPath()
+    c.arc(x, y, 50, 0, Math.PI * 2, false)
+    c.strokeStyle = "tomato"
+    c.stroke()
+    x += 1;
+    y += 1;
 }
+
+animate()
